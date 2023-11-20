@@ -5,14 +5,9 @@ import React, { useState } from "react";
 
 const Tabs = ({tabProps}) =>{
 
-    const [selectedTab, setSelectedTab] = useState(null);
+    const [content, setContent] = useState('');
 
 
-
-
-    const handleTabClick = (title)=>{
-        setSelectedTab(title);  
-    }
 
 
     return(
@@ -21,17 +16,13 @@ const Tabs = ({tabProps}) =>{
 
         <div>
             <ul>
-            {tabProps.map((tab,index)=>(
-                <li key={index} onClick={() => handleTabClick(tab.title)}>{tab.title} </li>
+            {tabProps.map((tab)=>(
+                <li onClick={()=> setContent(tab.content)}>{tab.title} </li>
             ))}
             </ul>
 
 
-        {selectedTab && (
-        <div>
-          {tabProps.find((tab) => tab.title === selectedTab).content}
-        </div>
-        )}    
+                <p>{content}</p>
         </div>
 
        
