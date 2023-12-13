@@ -1,14 +1,8 @@
 
 import React, { useState } from "react";
+const Tabs = ({tabData}) =>{
 
-
-
-const Tabs = ({tabProps}) =>{
-
-    const [content, setContent] = useState('');
-
-
-
+    const [content, setContent] = useState(tabData[0].content);
 
     return(
         
@@ -16,13 +10,17 @@ const Tabs = ({tabProps}) =>{
 
         <div>
             <ul>
-            {tabProps.map((tab)=>(
+            {tabData.map((tab)=>(
                 <li onClick={()=> setContent(tab.content)}>{tab.title} </li>
             ))}
             </ul>
 
+                <div>
+                {
+                    content && <p>{content}</p>
+                }
+                </div>
 
-                <p>{content}</p>
         </div>
 
        

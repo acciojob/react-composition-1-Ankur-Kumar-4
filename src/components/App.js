@@ -3,7 +3,6 @@ import React from "react";
 import './../styles/App.css';
 import Tabs from './Tabs'
 
-
 const tabData = [
 
   {
@@ -24,13 +23,9 @@ const tabData = [
 const App = () => {
 
 
-  
-
-
-
   return (
     <div>
-        <Tabs tabProps = {tabData} />
+        <Tabs tabData = {tabData} />
         
     </div>
 
